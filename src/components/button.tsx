@@ -1,7 +1,11 @@
+type ButtonProps = {
+    children?:string;
+}
 
-export function Button() {
+
+export function Button(props: ButtonProps) {
    return (
-       <button>Clique aqui</button>
+       <button>{props.children}</button>
    ) 
 }
 
