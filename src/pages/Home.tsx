@@ -11,16 +11,16 @@ export function Home(){
             <aside>
                <img src={illustration} alt="Ilustração simbolizando perguntas e respostas" />
                <strong>Crie salas de Q&amp;A ao-vivo</strong>
-               <p>Tire suas duvidas da sua audiencia em tempo real</p> 
+               <p>Tire duvidas da sua audiencia em tempo real.</p> 
             </aside>
             <main>
-                <div>
+                <div className="main-content">
                     <img src={logoImg} alt="Letmeask"/>
-                    <button>
+                    <button className="create-room">
                         <img src={googleIconImg} alt="Logo do google"/>
                         Crie sua sala com o Google
                     </button>
-                    <div>Ou entre em uma sala</div>
+                    <div className="separator">Ou entre em uma sala</div>
                     <form>
                         <input
                             type="text"
