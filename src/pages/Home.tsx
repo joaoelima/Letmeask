@@ -1,3 +1,5 @@
+import {useNavigate } from 'react-router-dom'
+
 import illustration from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
@@ -6,8 +8,13 @@ import { Button } from '../components/button';
 import '../styles/auth.scss';
 
 
-
+//useHistory mudou para useNavigate na biblioteca do React-router
 export function Home(){
+    const navigate = useNavigate();
+
+    function navigateToNewRoom() {
+        navigate('/rooms/new');
+    }
     return(
         <div id="page-auth">
             <aside>
@@ -18,7 +25,7 @@ export function Home(){
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask"/>
-                    <button className="create-room">
+                    <button onClick={navigateToNewRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do google"/>
                         Crie sua sala com o Google
                     </button>
