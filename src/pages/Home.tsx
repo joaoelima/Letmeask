@@ -1,20 +1,30 @@
-import {useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom';
 
+import {AuthContext}  from '../App';
 import illustration from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
+
 import { Button } from '../components/button';
 
 import '../styles/auth.scss';
+import { useContext } from 'react';
 
 
 //useHistory mudou para useNavigate na biblioteca do React-router
 export function Home(){
     const navigate = useNavigate();
+    const { user, signInWithGoogle } = useContext.arguments(AuthContext)
+    
 
-    function navigateToNewRoom() {
+    async function handleCreateRoom() {
+        if (!user) {
+          await  signInWithGoogle()
+        }
+
         navigate('/rooms/new');
-    }
+               
+    } 
     return(
         <div id="page-auth">
             <aside>
@@ -25,7 +35,7 @@ export function Home(){
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask"/>
-                    <button onClick={navigateToNewRoom} className="create-room">
+                    <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do google"/>
                         Crie sua sala com o Google
                     </button>
