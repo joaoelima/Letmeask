@@ -12,7 +12,7 @@ import { useContext } from 'react';
 
 
 export function NewRoom(){
-    const { user } = useContext.arguments(AuthContext)
+    const { user } = useContext(AuthContext)
 
     return(
         <div id="page-auth">

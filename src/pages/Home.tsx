@@ -14,7 +14,7 @@ import { useContext } from 'react';
 //useHistory mudou para useNavigate na biblioteca do React-router
 export function Home(){
     const navigate = useNavigate();
-    const { user, signInWithGoogle } = useContext.arguments(AuthContext)
+    const { user, signInWithGoogle } = useContext(AuthContext)
     
 
     async function handleCreateRoom() {

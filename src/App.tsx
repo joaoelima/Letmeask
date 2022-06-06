@@ -1,7 +1,7 @@
-import firebase from 'firebase/compat';
+import firebase from 'firebase/compat/app';
 import { useContext, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { createContext } from 'vm';
+import { createContext } from 'react';
 
 import { Home } from './pages/Home';
 import { NewRoom } from './pages/NewRoom';
@@ -48,12 +48,12 @@ function App() {
 
   return(
     <BrowserRouter>
-     <AuthContext.provider value={{ user, signInWithGoogle }}>  
+     <AuthContext.Provider value={{ user, signInWithGoogle }}>  
        <Routes>        
         <Route path="/" element={<Home />} />
         <Route path="/rooms/new" element={<NewRoom />} />       
        </Routes>
-      </AuthContext.provider>       
+      </AuthContext.Provider>       
     </BrowserRouter>
   );
 }
