@@ -1,6 +1,6 @@
 import {useNavigate } from 'react-router-dom';
 
-import {AuthContext}  from '../App';
+import {AuthContext}  from '../contexts/AuthContext';
 import illustration from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
