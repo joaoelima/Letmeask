@@ -9,11 +9,8 @@ import { auth } from './services/firebase';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 
-
-
+//Função onde são feitas as chamadas de tela.
 function App() {
-   
-
   return(
     <BrowserRouter>
     <AuthContextProvider>       
@@ -25,5 +22,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

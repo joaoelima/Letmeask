@@ -1,6 +1,6 @@
 import {useNavigate } from 'react-router-dom';
 
-import {AuthContext}  from '../contexts/AuthContext';
+
 import illustration from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
@@ -8,13 +8,13 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import { Button } from '../components/button';
 
 import '../styles/auth.scss';
-import { useContext } from 'react';
+import { useAuth } from '../hooks/useAuth'
 
 
 //useHistory mudou para useNavigate na biblioteca do React-router
 export function Home(){
     const navigate = useNavigate();
-    const { user, signInWithGoogle } = useContext(AuthContext)
+    const { user, signInWithGoogle } = useAuth();
     
 
     async function handleCreateRoom() {
