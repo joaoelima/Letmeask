@@ -6,9 +6,10 @@ import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/button';
+import { useAuth } from '../hooks/useAuth'
 
 import '../styles/auth.scss';
-import { useAuth } from '../hooks/useAuth'
+
 
 
 //useHistory mudou para useNavigate na biblioteca do React-router
