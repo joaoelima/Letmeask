@@ -1,3 +1,4 @@
+import { userInfo } from 'os';
 import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom'
 
@@ -6,15 +7,15 @@ import illustration from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import { Button } from '../components/button';
-//import { useAuth} from '../hooks/useAuth'
+import { useAuth } from '../hooks/useAuth';
+import { database } from '../services/firebase';
 
 import '../styles/auth.scss';
 
 
 
 export function NewRoom(){
-    //const { user } = useAuth();
-
+    const { user } = useAuth();
     const [newRoom, setNewRoom] = useState ("");  
 
     async function handleCreateRoom(event:FormEvent) {
@@ -24,7 +25,12 @@ export function NewRoom(){
             return;
         }
 
-        
+        const roomRef = database.ref("rooms");
+
+        const firebaseRoom = await roomRef.push({
+            tittle: newRoom,
+            authorId: user?.id
+        })
     }
 
 
