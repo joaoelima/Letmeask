@@ -18,7 +18,7 @@ import { database } from '../services/firebase';
 export function Home(){
     const navigate = useNavigate();
     const { user, signInWithGoogle } = useAuth();
-    const [roomCode, setRoomCode] = useState(() => "");
+    const [roomCode, setRoomCode] = useState("");
     
 
     async function handleCreateRoom() {
@@ -39,9 +39,11 @@ export function Home(){
        const roomRef = await database.ref('/rooms/' + roomCode).get();
 
        if (!roomRef.exists()) {
-        alert('Room not foun.');
+        alert('Sala não encontrada.');
         return;
        }
+
+       navigate('/rooms/' + roomCode);
     }
 
     return(
