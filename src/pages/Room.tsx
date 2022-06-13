@@ -1,4 +1,5 @@
 import logoImg from '../assets/images/logo.svg'
+import { Button } from '../components/button';
 
 export function Room() {
     return (
@@ -15,6 +16,15 @@ export function Room() {
                     <h1>Sala React</h1>
                     <span>4 perguntas</span>
                 </div>
+                    <textarea 
+                        placeholder="O que voce quer perguntar?"                    
+                    />
+                <form>
+                    <div className="form-footer">
+                        <span>Para enviar uma pergunta, <button>faça seu login</button>,</span>
+                        <Button></Button>
+                    </div>
+                </form>
            </main>
         </div>
     );
