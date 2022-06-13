@@ -1,6 +1,8 @@
 import logoImg from '../assets/images/logo.svg'
 import { Button } from '../components/button';
 
+import '../styles/room.scss';
+
 export function Room() {
     return (
         <div id="page-room">
@@ -21,8 +23,8 @@ export function Room() {
                     />
                 <form>
                     <div className="form-footer">
-                        <span>Para enviar uma pergunta, <button>faça seu login</button>,</span>
-                        <Button></Button>
+                        <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+                        <Button type="submit">Enviar pergunta.</Button>
                     </div>
                 </form>
            </main>
