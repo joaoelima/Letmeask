@@ -1,3 +1,6 @@
+//Pagina para ciração das salas.
+
+
 import { useParams } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg'
